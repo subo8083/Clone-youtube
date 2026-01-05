@@ -23,27 +23,51 @@ body { background-color: #f9f9f9; }
 }
 #search-container {
   flex: 1;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  margin-left: 10px;
 }
 #query {
-  width: 400px;
-  padding: 8px 12px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 2px 0 0 2px;
-  outline: none;
+  width: 60%; /* Use percentage instead of fixed 400px */
+  max-width: 400px;
+  min-width: 150px;
+  padding: 8px;
 }
 #search-btn {
-  padding: 8px 16px;
-  border: 1px solid #ccc;
-  border-left: none;
-  background-color: #eee;
-  cursor: pointer;
-  border-radius: 0 2px 2px 0;
+  padding: 8px 12px;
 }
+
+/* For tablets and mobile */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  #search-container {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  #query {
+    width: 80%;
+    font-size: 14px;
+  }
+
+  #cont {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .video h3 {
+    font-size: 14px;
+  }
+}
+
 
 /* Suggestions dropdown */
 #suggestions {
